@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.holo"
-version = "1.0-SNAPSHOT"
+version = "v0.5"
 
 repositories {
     mavenCentral()
@@ -33,6 +33,11 @@ val examplesImplementation: Configuration by configurations.getting {
 }
 configurations["examplesRuntimeOnly"].extendsFrom(configurations.runtimeOnly.get())
 
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
 
 tasks {
     compileKotlin {
